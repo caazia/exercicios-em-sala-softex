@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  background-image: url(https://img.freepik.com/fotos-premium/fundo-abstrato-grunge_55883-3979.jpg?w=360);
+}
+
+.corpo {
+  background-color: #face69;
+}
+
+.formulario {
+  background-color: #fbe6b5;
+}
+
+#submit {
+  background-color: white;
+  padding: 0.8rem;
+  margin: 10px 10px;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #b1afaf;
+}
