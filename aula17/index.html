@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <div id="list"></div>
+    <div id="altern"></div>
+
+    <script type="text/babel">
+      class App extends React.Component {
+        render() {
+          let x = 1000;
+
+          const myElement = <h1> Hello, {this.props.name}. I love JXS! {x} </h1>
+          return myElement;
+        }
+      }
+
+      class Lista extends React.Component {
+        render() {
+          const listaOrd = (<ul>
+            <li>Cássia</li>
+            <li>Carvalho</li>
+            <li>Sushi</li>
+          </ul>);
+
+          return listaOrd;
+        }
+      }
+
+      class Alternario extends React.Component {
+        render() {
+          const x = 10;
+          /*let text = "GoodBye"
+            if (x < 10) {
+              text = "Hello";
+            }*/
+          
+          const myElement = <h1>{(x < 10 ? "Hello" : "Goodbye")}</h1>;
+          return myElement;
+        }
+      }
+
+      ReactDOM.render(<Alternario />, document.getElementById("altern"));
+
+      ReactDOM.render(<Lista />, document.getElementById("list"))
+      ReactDOM.render(<App name="Cássia" />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
