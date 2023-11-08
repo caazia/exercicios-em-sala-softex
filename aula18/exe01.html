@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Hello React!</title>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      class Car extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            brand: "Fusca",
+            model: "Fusquinha",
+            color: "azul",
+            year: "1992",
+          };
+        }
+        changeYear = () => {
+          this.setState({ year: "2005" });
+        };
+
+        render() {
+          return (
+            <div>
+              <h1> Meu {this.state.brand}</h1>
+              <p>
+                {" "}
+                Tem a cor {this.state.color}, com o modelo de {this.state.model}{" "}
+                e do ano de {this.state.year}{" "}
+              </p>
+              <button type="button" onClick={this.changeYear}>
+                Mude a cor
+              </button>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Car />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
